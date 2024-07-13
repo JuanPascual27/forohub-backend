@@ -4,6 +4,7 @@ import com.cursoalura.forohub.dto.curso.ActualizarCursoDTO;
 import com.cursoalura.forohub.dto.curso.DetalleCursoDTO;
 import com.cursoalura.forohub.dto.curso.RegistroCursoDTO;
 import com.cursoalura.forohub.service.CursoService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,6 +18,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/cursos")
+@SecurityRequirement(name = "bearer-key")
 public class CursoController {
     @Autowired
     private CursoService cursoService;

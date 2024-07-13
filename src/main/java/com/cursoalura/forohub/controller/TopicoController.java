@@ -5,6 +5,7 @@ import com.cursoalura.forohub.dto.topico.DetalleTopicoDTO;
 import com.cursoalura.forohub.dto.topico.RegistroTopicoDTO;
 import com.cursoalura.forohub.dto.topico.TopicoListaDTO;
 import com.cursoalura.forohub.service.TopicoService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,6 +19,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/topicos")
+@SecurityRequirement(name = "bearer-key")
 public class TopicoController {
     @Autowired
     private TopicoService topicoService;

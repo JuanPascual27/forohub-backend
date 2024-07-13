@@ -30,6 +30,8 @@ public class SecurityConfiguration {
                             .permitAll();
                     auth.requestMatchers(HttpMethod.POST,"/auth/register")
                             .permitAll();
+                    auth.requestMatchers("/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**")
+                            .permitAll();
                     auth.anyRequest()
                             .authenticated();
                 })

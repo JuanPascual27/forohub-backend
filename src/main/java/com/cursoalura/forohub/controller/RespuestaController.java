@@ -5,6 +5,7 @@ import com.cursoalura.forohub.dto.respuesta.DetalleRespuestaDTO;
 import com.cursoalura.forohub.dto.respuesta.RegistroRespuestaDTO;
 import com.cursoalura.forohub.dto.respuesta.RespuestaListaDTO;
 import com.cursoalura.forohub.service.RespuestaService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,6 +19,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/respuestas")
+@SecurityRequirement(name = "bearer-key")
 public class RespuestaController {
     @Autowired
     private RespuestaService respuestaService;
